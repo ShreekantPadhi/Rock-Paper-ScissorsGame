@@ -18,7 +18,7 @@ const genCompChoice = () => {
 };
 
 const drawGame = () =>{
-    console.log("Game was draw");
+    
     message.innerText = "Game was draw. Play again!!";
     message.style.backgroundColor = "#081b31";
 };
@@ -34,7 +34,7 @@ const showWinner =(userwin, userChoice, compChoice) =>{
     else{
         compScore++;
         compScorePara.innerText = compScore;
-        console.log("You lose");
+       
         message.innerText = `You lose. ${compChoice} beats your ${userChoice}`;
         message.style.backgroundColor = "red";
     }
@@ -42,11 +42,11 @@ const showWinner =(userwin, userChoice, compChoice) =>{
 }
 
 const playGame =(userChoice) =>{
- console.log("user choice = ", userChoice);
+ 
 
  const compChoice = genCompChoice();
 
- console.log("Comp Choice =", compChoice);
+ 
 
  if(userChoice ===compChoice){
     drawGame();
@@ -71,9 +71,9 @@ const playGame =(userChoice) =>{
 choices.forEach((choice) =>{
     
     choice.addEventListener("click",() =>{
-        //console.log("choice was clicked");
+        
         const userChoice =choice.getAttribute("id");
-        //console.log("choice was clicked : ",userChoice);
+        
         playGame(userChoice);
     });
 });
